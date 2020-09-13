@@ -1,0 +1,14 @@
+{
+  "name": "schedulemanager",
+  "version": "1.0.0",
+  "description": "Retrieves schedules for BinDayCator and provides a setting for the current day",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.27.0"
+  }
+}
