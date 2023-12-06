@@ -31,7 +31,8 @@ function retrieveNextTrashDay(){
       res.setEncoding('utf8');
       res.on('data', (chunk) => {
          let dataObject = JSON.parse(chunk);
-         processTrashData(dataObject.data);
+	 console.debug("new data =\n"+JSON.stringify(dataObject));
+         processTrashData(dataObject.data.residential);
       });
    });
 
@@ -63,7 +64,7 @@ function processTrashData(trashData){
 
 function binResponseHandler(req, resp){
    resp.writeHead(200,{'Content-Type':'text/json'});
-   resp.end(`{happeningToday:'${upcomingTrashInfo.happeningToday}'}`);
+   resp.end(`${upcomingTrashInfo.happeningToday}`);
 }
 
 function humanResponseHandler(req, resp){
